@@ -1,0 +1,12 @@
+groups:
+  - name: ${service_name}-alerts
+    rules:
+    - alert: KubernetesPodNotHealthy
+      expr: sum by (cluster, namespace, pod, phase, stage) (kube_pod_status_phase{pod=~"${service_name}-.*", phase=~"Pending|Unknown|Failed"}) > 0
+      for: 30m
+      labels:
+        team: ${team_name}
+        priority: P2
+      annotations:
+        description: "Pod has been in a non-ready state for longer than 15 minutes"
+        summary: Kubernetes Pod not healthy (instance {{ $labels.instance }})

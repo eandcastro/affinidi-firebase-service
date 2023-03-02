@@ -1,5 +1,5 @@
 ARG NODE_BUILD_VERSION
-FROM registry.gitlab.com/affinidi/container-image-cache/node-base:${NODE_BUILD_VERSION}
+FROM registry.gitlab.com/affinidi/container-image-cache/node-build:${NODE_BUILD_VERSION}
 
 RUN chown -R node:node /usr/src/app/.npm
 
@@ -10,11 +10,17 @@ COPY --chown=node:node package.json package-lock.json ./
 COPY --chown=node:node ./dist ./dist
 COPY --chown=node:node ./node_modules ./node_modules
 COPY --chown=node:node ./swagger.json ./swagger.json
+COPY --chown=node:node ./src ./src
+COPY --chown=node:node ./test ./test
+# COPY --chown=node:node ./tsconfig-tests.json ./
+# COPY --chown=node:node ./.mocharc.yml ./
 
 ENV NODE_ENV production
+
+ENV PATH=$PATH:/usr/src/app/node_modules/.bin
 
 EXPOSE 3000
 
 USER 1000
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "test:smoke" ]

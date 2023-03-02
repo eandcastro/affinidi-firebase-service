@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: firebase-service
+  description: The Firebase Service
+  tags:
+    - typescript
+    - node
+  annotations:
+    'backstage.io/kubernetes-id': firebase-service
+    opsgenie.com/component-selector: 'tag:"service:firebase-service"'
+spec:
+  type: service
+  lifecycle: production
+  owner: affinidi
+  system: firebase-service
+  providesApis:
+    - firebase-service
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: firebase-service
+  description: API provided by Firebase Service
+  tags:
+    - rest
+spec:
+  type: openapi
+  lifecycle: production
+  owner: affinidi
+  definition:
+    $text: ./docs/api.yaml

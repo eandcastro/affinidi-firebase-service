@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  service:
+    build:
+      dockerfile: ./Dockerfile.dev
+      context: ./
+    restart: unless-stopped
+    expose:
+      - 80
+    ports:
+      - '${PORT}:3000'
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://${HOST}:${PORT}/health"]
+      interval: 10m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+
+
+
+

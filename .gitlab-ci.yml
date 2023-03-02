@@ -1,0 +1,22 @@
+include:
+  - project: affinidi/foundational/foundational-pipeline
+    # Please do not change 'ref' manually. It is updated by automation.
+    ref: v2.102.0 # Please do not change 'ref' manually. It is updated by automation.
+    file: /stack/backend.yml
+variables:
+  NODE_BUILD_VERSION: ${NODE_16}  # Options: https://gitlab.com/affinidi/foundational/foundational-pipeline/-/blob/main/variables.yml#L7
+test-unit:
+  stage: test
+  extends:
+    - .node-base
+    - .cache
+    - .non-release-rules
+    - .heavy-job
+  needs:
+    - build
+  variables:
+    TARGET_ENV: "dev"
+    NODE_BUILD_VERSION: ${NODE_SLIM_16}
+  script:
+    - npm run test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/

@@ -1,0 +1,112 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"ExamplesDto": {
+				"properties": {
+					"test": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"test"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ExamplesInput": {
+				"properties": {
+					"test": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"test"
+				],
+				"type": "object"
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "firebase-service",
+		"version": "0.0.1",
+		"description": "This is firebase-service service",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {
+			"name": "Ean De Castro",
+			"email": "ean.d@affinidi.com"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/examples/get-example-by-id/{id}": {
+			"get": {
+				"operationId": "GetExample",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ExamplesDto"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/examples/store-example": {
+			"post": {
+				"operationId": "StoreExample",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ExamplesDto"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ExamplesInput"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

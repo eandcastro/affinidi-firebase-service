@@ -1,0 +1,15 @@
+node_modules
+dist
+.history
+.idea
+coverage
+.env
+.npmrc
+.project
+**/.terraform/*
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+.terraformrc
+terraform.rc
+**/.terragrunt-cache

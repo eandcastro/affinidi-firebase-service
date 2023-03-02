@@ -1,0 +1,5 @@
+FROM registry.gitlab.com/affinidi/container-image-cache/node-build:14.16.1-alpine3.13-v0.0.1
+
+WORKDIR /app
+
+CMD [ "npm", "run", "dev"]

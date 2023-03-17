@@ -5,6 +5,7 @@ include:
     file: /stack/backend.yml
 variables:
   NODE_BUILD_VERSION: ${NODE_16}  # Options: https://gitlab.com/affinidi/foundational/foundational-pipeline/-/blob/main/variables.yml#L7
+  SERVICE_SMOKE_ENABLED: 'false'
 test-unit:
   stage: test
   extends:

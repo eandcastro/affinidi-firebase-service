@@ -5,7 +5,7 @@ locals {
   common_vars  = yamldecode(file("${find_in_parent_folders("common.yml")}"))
   # override prefix to have a custom value for the TF state bucket prefix
   original_prefix       = try("${local.account_vars.locals.prefix}-", "")
-  prefix                = "affinidi"
+  prefix                = "safetravel"
   suffix                = try("-${local.account_vars.locals.suffix}", "")
   application           = local.common_vars.application
   aws_region            = local.region_vars.locals.aws_region

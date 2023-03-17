@@ -6,7 +6,7 @@ description: |-
 criticality: high
 visibility: external
 tech-stack: backend
-team-name: safe-travel
+team-name: huat
 code-repository: https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service.git
 endpoints:
   health: /health

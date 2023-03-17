@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Global, Logger, Module } from '@nestjs/common'
-import { ConfigService } from '@nestjs/config'
+import { ConfigModule, ConfigService } from '@nestjs/config'
 import { WinstonModule } from 'nest-winston'
+import configuration from '../../config/configuration'
 
 @Global()
 @Module({
@@ -9,6 +9,12 @@ import { WinstonModule } from 'nest-winston'
     WinstonModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => config.get('log.options'),
+    }),
+    ConfigModule.forRoot({
+      // Set ignoreEnvFile to false when running locally
+      ignoreEnvFile: true,
+      load: [configuration],
+      isGlobal: true,
     }),
   ],
   providers: [Logger],

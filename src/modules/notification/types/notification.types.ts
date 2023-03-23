@@ -1,5 +1,5 @@
 type Message = {
-  msg: string
+  notificationType: string
 }
 
 type Notification = {

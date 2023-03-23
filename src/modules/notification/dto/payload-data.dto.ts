@@ -1,9 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, IsString } from 'class-validator'
+import { IsOptional, IsString } from 'class-validator'
 
 export class PayloadData {
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  @ApiProperty({ required: true })
-  msg: string
+  @ApiProperty({ example: 'NOTIFY_USER_FOR_BOOKING_HEALTH_SCREENING' })
+  notificationType: string
 }

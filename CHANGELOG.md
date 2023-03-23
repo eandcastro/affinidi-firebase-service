@@ -1,3 +1,10 @@
+# [1.1.0](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/compare/v1.0.0...v1.1.0) (2023-03-23)
+
+
+### Features
+
+* add notificationType in payload ([31532ec](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/commit/31532ecaa69a8805e0ce251c09b1fed87002962c))
+
 # 1.0.0 (2023-03-17)
 
 

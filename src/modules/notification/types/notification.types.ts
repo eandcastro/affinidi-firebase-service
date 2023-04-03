@@ -1,5 +1,6 @@
 type Message = {
   notificationType: string
+  notificationMetadata?: string
 }
 
 type Notification = {

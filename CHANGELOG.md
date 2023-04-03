@@ -1,3 +1,10 @@
+# [1.2.0](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/compare/v1.1.0...v1.2.0) (2023-04-03)
+
+
+### Features
+
+* add optional notification metadata ([698480a](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/commit/698480a75376a3b5b81ea2b9db377d6c31a14cf4))
+
 # [1.1.0](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/compare/v1.0.0...v1.1.0) (2023-03-23)
 
 

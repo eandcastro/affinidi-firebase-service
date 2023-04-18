@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: firebase-service
+  name: huat-firebase-service
   description: The Firebase Service
   tags:
     - typescript
@@ -12,7 +12,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: affinidi
+  owner: huat
   system: firebase-service
   providesApis:
     - firebase-service
@@ -20,13 +20,13 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: firebase-service
+  name: huat-firebase-service
   description: API provided by Firebase Service
   tags:
     - rest
 spec:
   type: openapi
   lifecycle: production
-  owner: affinidi
+  owner: huat
   definition:
     $text: ./docs/api.yaml

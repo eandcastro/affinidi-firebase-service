@@ -1,3 +1,10 @@
+# [1.3.0](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/compare/v1.2.0...v1.3.0) (2023-05-09)
+
+
+### Features
+
+* Update catalog-info.yaml ([56cf238](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/commit/56cf238ff34ab275f33fb568189c24676d58a42a))
+
 # [1.2.0](https://gitlab.com/affinidi/safe-travel/huat/health-folder/firebase-service/compare/v1.1.0...v1.2.0) (2023-04-03)
 
 
